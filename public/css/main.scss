@@ -1,0 +1,109 @@
+$light_one: #6ae0f8;
+$light_two: #2eb1c9;
+$mid: #00859b;
+$dark_one: #005b70;
+$dark_two: #003348;
+$white: #e3e3e3;
+$black: #202020;
+$grey: #555555;
+
+* {
+  font-family: "Montserrat", sans-serif;
+  color: $dark_two;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $light_one;
+}
+
+.container-fluid-custom {
+  max-width: 1600px;
+}
+
+// HOME SCREEN STYLES
+
+@media screen and (min-width: 1200px) {
+  .home {
+    background-color: $light_one;
+  }
+  .hero {
+    background: url("../img/web-developer-outline.png") -5% 95% no-repeat,
+      url("../img/javascript-outline.png") 105% 97.5% no-repeat, $light_one;
+    background-size: 30%;
+  }
+}
+
+.home-title::before {
+  content: url("../img/code.png");
+  position: absolute;
+  left: -50px;
+  top: -30px;
+}
+
+.home-title::after {
+  content: url("../img/code.png");
+  position: absolute;
+  right: -50px;
+  bottom: -30px;
+}
+.btn {
+  border-radius: 25px;
+}
+.btn-primary {
+  --bs-btn-color: #e3e3e3;
+  --bs-btn-bg: #00859b;
+  --bs-btn-border-color: #00859b;
+  --bs-btn-hover-color: #e3e3e3;
+  --bs-btn-hover-bg: #005b70;
+  --bs-btn-hover-border-color: #00859b;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #171717;
+  --bs-btn-active-bg: #005b70;
+  --bs-btn-active-border-color: #005b70;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #e3e3e3;
+  --bs-btn-disabled-bg: #555555;
+  --bs-btn-disabled-border-color: #555555;
+}
+.btn-outline-primary {
+  --bs-btn-color: #003348;
+  --bs-btn-bg: inherit;
+  --bs-btn-border-color: #005b70;
+  --bs-btn-hover-color: #e3e3e3;
+  --bs-btn-hover-bg: #005b70;
+  --bs-btn-hover-border-color: #005b70;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #e3e3e3;
+  --bs-btn-active-bg: #005b70;
+  --bs-btn-active-border-color: #005b70;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #e3e3e3;
+  --bs-btn-disabled-bg: #555555;
+  --bs-btn-disabled-border-color: #555555;
+}
+
+a {
+  color: #003348;
+}
+
+.nav {
+  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-link-font-weight: ;
+  --bs-nav-link-color: #171717;
+  --bs-nav-link-hover-color: #171717;
+  --bs-nav-link-disabled-color: #51515181;
+  list-style: none;
+}
+
+.nav-pills {
+  --bs-nav-pills-border-radius: 25px;
+  --bs-nav-pills-link-active-color: #e3e3e3;
+  --bs-nav-pills-link-active-bg: #00859b;
+}
+
+.logo {
+  height: 40px;
+}

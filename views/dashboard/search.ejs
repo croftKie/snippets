@@ -1,0 +1,11 @@
+<div class="container-fluid pb-5 mb-5">
+  <div class="row">
+    <% if (searchResults != '') { %> <% searchResults.forEach((snippet,
+    index)=>{ %>
+    <a href="/dashboard/item<%= snippet._id %>"></a>
+    <h4><%= snippet.title %></h4>
+    <%})%> <%} else { %>
+    <p>No items found.</p>
+    <% } %>
+  </div>
+</div>
