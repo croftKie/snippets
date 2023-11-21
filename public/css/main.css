@@ -96,4 +96,16 @@ a {
 
 .logo {
   height: 40px;
+}
+
+.item-list {
+  width: 60%;
+}
+
+.list-item {
+  width: 40%;
+}
+
+.check {
+  transform: scale(2);
 }/*# sourceMappingURL=main.css.map */

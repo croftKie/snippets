@@ -97,13 +97,23 @@ a {
   --bs-nav-link-disabled-color: #51515181;
   list-style: none;
 }
-
 .nav-pills {
   --bs-nav-pills-border-radius: 25px;
   --bs-nav-pills-link-active-color: #e3e3e3;
   --bs-nav-pills-link-active-bg: #00859b;
 }
-
 .logo {
   height: 40px;
+}
+
+.item-list {
+  width: 60%;
+}
+
+.list-item {
+  width: 40%;
+}
+
+.check {
+  transform: scale(2);
 }

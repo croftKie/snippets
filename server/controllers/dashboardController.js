@@ -1,11 +1,10 @@
 const Snippet = require("../models/snippet");
+const Todo = require("../models/Todo");
 const User = require("../models/User");
 const mongoose = require("mongoose");
 
 // Get dashboard
-
 exports.dashboard = async (req, res) => {
-  console.log(req.session);
   const locals = {
     title: "Dashboard | Keep your code!",
     description:
@@ -30,7 +29,6 @@ exports.dashboard = async (req, res) => {
       .limit(perPage)
       .exec();
 
-    console.log(snippets);
     const count = await Snippet.count();
 
     res.render("dashboard/index", {
@@ -47,7 +45,6 @@ exports.dashboard = async (req, res) => {
 };
 
 // Get view specific snippet
-
 exports.viewSnippet = async (req, res) => {
   const snippet = await Snippet.findById({ _id: req.params.id })
     .where({ user: req.session.name })
@@ -65,7 +62,6 @@ exports.viewSnippet = async (req, res) => {
 };
 
 // PUT update specific snippet
-
 exports.updateSnippet = async (req, res) => {
   try {
     await Snippet.findOneAndUpdate(
@@ -80,7 +76,6 @@ exports.updateSnippet = async (req, res) => {
 };
 
 // DELETES specific snippet
-
 exports.dashboardDeleteSnippet = async (req, res) => {
   try {
     await Snippet.deleteOne({ _id: req.params.id }).where({
@@ -93,7 +88,6 @@ exports.dashboardDeleteSnippet = async (req, res) => {
 };
 
 // GET add snippet
-
 exports.dashboardAddSnippet = async (req, res) => {
   res.render("dashboard/add", {
     layout: "../views/layouts/dashboard",
@@ -101,7 +95,6 @@ exports.dashboardAddSnippet = async (req, res) => {
 };
 
 // GET add snippet
-
 exports.dashboardAddSnippetSubmit = async (req, res) => {
   const user = await User.findById({
     _id: req.session.name,
@@ -120,7 +113,6 @@ exports.dashboardAddSnippetSubmit = async (req, res) => {
 };
 
 // GET Search
-
 exports.dashboardSearch = async (req, res) => {
   try {
     res.render("dashboard/search", {
@@ -133,7 +125,6 @@ exports.dashboardSearch = async (req, res) => {
 };
 
 //POST Search
-
 exports.dashboardSearchSubmit = async (req, res) => {
   try {
     let searchTerm = req.body.searchTerm;
@@ -153,4 +144,92 @@ exports.dashboardSearchSubmit = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+// GET todo list dash
+exports.todoDash = async (req, res) => {
+  const locals = {
+    title: "To Do List | Keep your code!",
+    description:
+      "A note-taking application for all your important functions and snippets of code.",
+  };
+  let perPage = 12;
+  let page = req.query.page || 1;
+  try {
+    const todos = await Todo.aggregate([
+      { $sort: { createdAt: -1 } },
+      { $match: { user: new mongoose.Types.ObjectId(req.session.name) } },
+      {
+        $project: {
+          title: { $substr: ["$title", 0, 30] },
+        },
+      },
+    ])
+      .skip(perPage * page - perPage)
+      .limit(perPage)
+      .exec();
+
+    const count = await todos.length;
+
+    res.render("dashboard/todoDash", {
+      userName: "Kieran Croft",
+      locals,
+      todos,
+      layout: "../views/layouts/dashboard",
+      current: page,
+      pages: Math.ceil(count / perPage),
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// // GET render List view
+// exports.renderAddList = async (req, res) => {
+//   const list_length = 1;
+//   res.render("dashboard/addList", {
+//     list_length,
+//     layout: "../views/layouts/dashboard",
+//   });
+// };
+
+// GET add new list
+exports.todoAddList = async (req, res) => {
+  try {
+    await Todo.create({
+      user: new mongoose.Types.ObjectId(req.session.name),
+      title: "new to do list",
+      list: [
+        {
+          text: "placeholder text",
+          checked: false,
+        },
+      ],
+    });
+    res.redirect("/todo");
+  } catch (error) {
+    console.log(error);
+    res.redirect("/dashboard");
+  }
+};
+
+// GET  view list
+exports.viewList = async (req, res) => {
+  res.render("dashboard/todoDash", {
+    layout: "../views/layouts/dashboard",
+  });
+};
+
+// UPDATE  add new list item to list
+exports.updateList = async (req, res) => {
+  res.render("dashboard/todoDash", {
+    layout: "../views/layouts/dashboard",
+  });
+};
+
+// DELETE delete list
+exports.deleteList = async (req, res) => {
+  res.render("dashboard/todoDash", {
+    layout: "../views/layouts/dashboard",
+  });
 };
