@@ -5,15 +5,27 @@
         <h1 class="display-2 fw-bold mb-4 position-relative home-title">
           Login to Snippets.
         </h1>
-        <form action="/auth/login" method="POST">
-          <input type="email" name="email" id="email" , placeholder="email" />
+        <form
+          class="d-flex flex-column align-items-center form-group gap-4"
+          action="/auth/login"
+          method="POST"
+        >
           <input
+            class="form-control w-50"
+            type="email"
+            name="email"
+            id="email"
+            ,
+            placeholder="email"
+          />
+          <input
+            class="form-control w-50"
             type="password"
             name="password"
             id="password"
             placeholder="password"
           />
-          <button class="btn btn-primary" type="submit">Login</button>
+          <button class="btn btn-primary w-25" type="submit">Login</button>
         </form>
       </div>
     </div>
