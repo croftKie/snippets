@@ -5,7 +5,13 @@ const mongoose = require("mongoose");
 const saltRounds = 10;
 
 exports.login = async (req, res) => {
+  const locals = {
+    title: "Snippets 98",
+    description:
+      "A note-taking application for all your important functions and snippets of code.",
+  };
   res.render("auth/login", {
+    locals,
     layout: "../views/layouts/main",
   });
 };

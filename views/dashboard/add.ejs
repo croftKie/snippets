@@ -1,49 +1,43 @@
-<div class="container-fluid pb-5 mb-5 px-5">
-  <div class="row mb-4">
-    <div class="col">
-      <nav aria="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-          <li class="breadcrumb-item">Add New Snippet</li>
-        </ol>
-      </nav>
-      <div class="d-flex justify-content-between align-items-center">
-        <h1 class="h3">Add Snippet</h1>
-      </div>
+<div class="content-container">
+  <div class="container-inner">
+    <div class="header">
+      <h1 class="h3">Add Snippet</h1>
+      <a href="/dashboard"><button>Go Back</button></a>
+    </div>
+    <div class="content">
+      <form action="/dashboard/add" method="POST" class="position-relative">
+        <div class="form-group mb-4" style="left: 1px; top: 1px; right: 1px">
+          <input
+            type="text"
+            class="form-control fw-bold border-0 fs-4"
+            id="title"
+            name="title"
+            placeholder="title"
+            required
+          />
+        </div>
+        <div class="form-group mb-4">
+          <textarea
+            class="form-control pt-5 fs-4"
+            name="body"
+            id="body"
+            placeholder="body"
+            rows="12"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-lg">
+            + Add Snippet
+          </button>
+        </div>
+      </form>
     </div>
   </div>
-  <form action="/dashboard/add" method="POST" class="position-relative">
-    <div class="form-group mb-4" style="left: 1px; top: 1px; right: 1px">
-      <input
-        type="text"
-        class="form-control fw-bold border-0 fs-4"
-        id="title"
-        name="title"
-        placeholder="title"
-        required
-      />
-    </div>
-    <div class="form-group mb-4">
-      <textarea
-        class="form-control pt-5 fs-4"
-        name="body"
-        id="body"
-        placeholder="body"
-        rows="12"
-      ></textarea>
-    </div>
-
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary btn-lg">
-        + Add Snippet
-      </button>
-    </div>
-  </form>
 </div>
 <link rel="stylesheet" href="/js/codemirror/lib/codemirror.css" />
 <script src="/js/codemirror/lib/codemirror.js"></script>
 <script src="/js/codemirror/mode/javascript/javascript.js"></script>
-<script src="/js/test.js"></script>
 <script>
   var editor = CodeMirror.fromTextArea(document.getElementById("body"), {
     lineNumbers: true,

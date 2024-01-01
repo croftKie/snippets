@@ -1,62 +1,32 @@
-<div class="container-fluid pb-5 mb-5 px-5">
-  <div class="row mb-4">
-    <div class="col">
-      <h1>Hey, <%= userName %></h1>
+<div class="content-container list">
+  <div class="container-inner">
+    <div class="header">
+      <h5>Hey, <%= userName %></h5>
+      <div class="col text-end">
+        <!-- <a href="/dashboard/add" class="btn btn-primary">+ New Note</a> -->
+        <button>X</button>
+      </div>
     </div>
-    <div class="col text-end">
-      <a href="/dashboard/add" class="btn btn-primary">+ New Note</a>
+    <div class="content">
+      <% if(snippets.length > 0){ %>
+      <div class="list">
+        <%for (let i = 0; i < snippets.length; i++) { %>
+        <div class="card">
+          <img src="/img/icons/TXT File.ico" alt="" />
+          <a href="/dashboard/snippet/<%= snippets[i]._id %>" class="card-body">
+            <h5 class="card-title"><%= snippets[i].title%></h5>
+          </a>
+        </div>
+        <% } %>
+      </div>
+      <% } else { %>
+
+      <div class="default-view">
+        <h4>Let's add your first snippet!</h4>
+        <a class="" href="/dashboard/add"><button>Create</button></a>
+      </div>
+
+      <% } %>
     </div>
   </div>
-
-  <div class="row">
-    <% if(snippets.length > 0){ for (let i = 0; i < snippets.length; i++) { %>
-    <div class="col-sm-3 mb-4">
-      <div class="card border-primary" style="min-height: 210px">
-        <a
-          href="/dashboard/snippet/<%= snippets[i]._id %>"
-          class="card-body text-decoration-none"
-        >
-          <h5 class="card-title"><%= snippets[i].title%></h5>
-          <p class="card-text"><%= snippets[i].body%></p>
-        </a>
-      </div>
-    </div>
-    <% }} else { %>
-
-    <div class="row">
-      <div class="col-3">
-        <img src="/img/coding-monochromatic-e1c05.svg" alt="" />
-      </div>
-      <div class="col mt-md-4">
-        <h2>Okay...</h2>
-        <h4>
-          Let's add your first snippet!<br /><br />
-          <a class="text-decoration-none" href="/dashboard/add">+ Create</a>
-        </h4>
-      </div>
-    </div>
-
-    <% } %>
-  </div>
-
-  <% if(snippets.length > 0){ %>
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-      <% let i = (Number(current) > 5 ? Number(current) - 4 : 1) %> <% if (i !==
-      1) { %>
-      <li class="page-item"><a href="" class="page-link">...</a></li>
-      <%} %> <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %> <%
-      if(i === current) { %>
-      <li class="page-item"><a href="" class="page-link"><%= i %></a></li>
-      <%} else {%>
-      <li class="page-item">
-        <a href="/dashboard/?page=<%= i %>" class="page-link"><%= i %></a>
-      </li>
-      <%} if(i === Number(current) + 4 && i < pages) { %>
-      <li class="page-item"><a href="" class="page-link">...</a></li>
-      <% }} %>
-    </ul>
-  </nav>
-
-  <% } %>
 </div>

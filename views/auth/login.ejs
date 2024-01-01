@@ -1,17 +1,21 @@
-<div class="py-md-5 mb-5">
-  <main>
-    <div class="row py-md-5 text-center justify-content-center">
-      <div class="col-md-12 col-lg-6 mb-6 mb-md-0">
-        <h1 class="display-2 fw-bold mb-4 position-relative home-title">
-          Login to Snippets.
-        </h1>
-        <form
-          class="d-flex flex-column align-items-center form-group gap-4"
-          action="/auth/login"
-          method="POST"
-        >
+<div class="container-outer">
+  <div class="container-inner">
+    <div class="header">
+      <h6 class="title">Welcome to Snippets 98.</h6>
+      <div>
+        <button class="info">I</button>
+        <button class="close">X</button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="image-section">
+        <img src="" alt="" />
+      </div>
+      <div class="form-container">
+        <p>Type a user name and password to log on to Snippets 98.</p>
+        <form class="form" action="/auth/login" method="POST">
           <input
-            class="form-control w-50"
+            class="email"
             type="email"
             name="email"
             id="email"
@@ -19,15 +23,15 @@
             placeholder="email"
           />
           <input
-            class="form-control w-50"
+            class="pass"
             type="password"
             name="password"
             id="password"
             placeholder="password"
           />
-          <button class="btn btn-primary w-25" type="submit">Login</button>
+          <button class="button" type="submit">Login</button>
         </form>
       </div>
     </div>
-  </main>
+  </div>
 </div>
