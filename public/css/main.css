@@ -22,105 +22,182 @@ body {
   margin: 10px;
 }
 
-.container-outer {
+.container-login {
   height: 30vh;
   width: 50vw;
   background-color: #cdcdcd;
   border: 4px groove;
 }
-.container-outer .container-inner {
+.container-login .container-inner {
   padding: 2px;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-.container-outer .container-inner .header {
+.container-login .container-inner .header {
   background-color: #005b70;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
   padding: 0 10px 0 10px;
   flex: 1;
 }
-.container-outer .container-inner .header h6 {
+.container-login .container-inner .header h6 {
+  color: white;
   font-weight: bold;
   margin-bottom: 0;
 }
-.container-outer .container-inner .header div button {
+.container-login .container-inner .header div {
+  display: flex;
+  gap: 10px;
+}
+.container-login .container-inner .header div button {
   height: 100%;
   width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.container-outer .container-inner .content {
+.container-login .container-inner .header div button img {
+  height: 20px;
+}
+.container-login .container-inner .content {
   display: flex;
   align-items: center;
   flex: 6;
 }
-.container-outer .container-inner .content .image-section {
+.container-login .container-inner .content .image-section {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.container-outer .container-inner .content .form-container {
+.container-login .container-inner .content .image-section img {
+  height: 100px;
+}
+.container-login .container-inner .content .form-container {
   flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.container-outer .container-inner .content .form-container p {
+.container-login .container-inner .content .form-container p {
   font-size: 0.8rem;
+  width: 80%;
 }
-.container-outer .container-inner .content .form-container .form {
+.container-login .container-inner .content .form-container .form {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 80%;
 }
-.container-outer .container-inner .content .form-container .form input {
+.container-login .container-inner .content .form-container .form input {
   box-shadow: inset 0 0 2px rgb(33, 33, 33);
   padding: 1%;
 }
-.container-outer .container-inner .content .form-container .form button {
+.container-login .container-inner .content .form-container .form button {
   width: 50%;
   margin-left: 50%;
 }
-.container-outer .container-inner .content-center {
-  justify-content: center;
-  flex-direction: column;
-}
 
-.content-container {
-  margin: 10px;
-  height: 90vh;
-  width: 50vw;
+.container-complete {
+  height: 20vh;
+  width: 20vw;
   background-color: #cdcdcd;
   border: 4px groove;
 }
-.content-container .container-inner {
+.container-complete .container-inner {
   padding: 2px;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-.content-container .container-inner .header {
+.container-complete .container-inner .header {
   background-color: #005b70;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
   padding: 0 10px 0 10px;
   flex: 1;
 }
-.content-container .container-inner .header h6 {
+.container-complete .container-inner .header h6 {
+  color: white;
   font-weight: bold;
   margin-bottom: 0;
 }
-.content-container .container-inner .header div button {
+.container-complete .container-inner .header div {
+  display: flex;
+  gap: 10px;
+}
+.container-complete .container-inner .header div button {
   height: 100%;
   width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.content-container .container-inner .content {
+.container-complete .container-inner .header div button img {
+  height: 20px;
+}
+.container-complete .container-inner .content {
+  flex: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container-complete .container-inner .content a {
+  width: 75%;
+  height: 30%;
+}
+.container-complete .container-inner .content a button {
+  width: 100%;
+  height: 100%;
+}
+
+.list-container {
+  margin: 10px;
+  height: 90vh;
+  width: 30vw;
+  background-color: #cdcdcd;
+  border: 4px groove;
+}
+.list-container .container-inner {
+  padding: 2px;
+  height: 100%;
   display: flex;
   flex-direction: column;
+}
+.list-container .container-inner .header {
+  background-color: #005b70;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 10px 0 10px;
+  flex: 1;
+}
+.list-container .container-inner .header h6 {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.list-container .container-inner .header div button {
+  height: 100%;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list-container .container-inner .header div button img {
+  height: 25px;
+}
+.list-container .container-inner .content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   flex: 15;
 }
-.content-container .container-inner .content .default-view {
+.list-container .container-inner .content .default-view {
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -128,45 +205,237 @@ body {
   align-items: center;
   justify-content: center;
 }
-.content-container .container-inner .content .default-view h4 {
+.list-container .container-inner .content .default-view h4 {
   text-align: center;
 }
-.content-container .container-inner .content form {
+.list-container .container-inner .content form {
   width: 100%;
   display: flex;
   flex-direction: column;
   min-height: 100%;
 }
-.content-container .container-inner .content form .form-group:nth-of-type(1) {
+.list-container .container-inner .content form .form-group:nth-of-type(1) {
   flex: 1;
   display: flex;
   align-items: center;
 }
-.content-container .container-inner .content form .form-group:nth-of-type(2) {
+.list-container .container-inner .content form .form-group:nth-of-type(2) {
   flex: 9;
 }
-.content-container .container-inner .content form .form-group:nth-of-type(2) div {
+.list-container .container-inner .content form .form-group:nth-of-type(2) div {
   height: 100%;
   color: black;
 }
-.content-container .container-inner .content form .form-group:nth-of-type(3) {
+.list-container .container-inner .content form .form-group:nth-of-type(3) {
   flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.content-container .container-inner .content .list {
+.list-container .container-inner .content .list {
   height: 100%;
   padding: 5px;
+  width: 98%;
 }
-.content-container .container-inner .content .list .card {
+.list-container .container-inner .content .list .card {
   width: 100%;
   display: flex;
   align-items: center;
   padding: 0 10px 0 10px;
   gap: 20px;
 }
-.content-container .container-inner .content .list .card img {
+.list-container .container-inner .content .list .card img {
+  height: 20px;
+}
+.list-container .container-inner .content .add-new {
+  height: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.add-container {
+  margin: 10px;
+  height: 90vh;
+  width: 50vw;
+  background-color: #cdcdcd;
+  border: 4px groove;
+}
+.add-container .container-inner {
+  padding: 2px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.add-container .container-inner .header {
+  background-color: #005b70;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  flex: 1;
+}
+.add-container .container-inner .header h6 {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.add-container .container-inner .header div button {
+  height: 100%;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-container .container-inner .header div button img {
+  height: 25px;
+}
+.add-container .container-inner .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 15;
+}
+.add-container .container-inner .content .default-view {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.add-container .container-inner .content .default-view h4 {
+  text-align: center;
+}
+.add-container .container-inner .content form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.add-container .container-inner .content form .form-group:nth-of-type(1) {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.add-container .container-inner .content form .form-group:nth-of-type(2) {
+  flex: 9;
+}
+.add-container .container-inner .content form .form-group:nth-of-type(2) div {
+  height: 100%;
+  color: black;
+}
+.add-container .container-inner .content form .form-group:nth-of-type(3) {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.add-container .container-inner .content .list {
+  height: 100%;
+  padding: 5px;
+}
+.add-container .container-inner .content .list .card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  gap: 20px;
+}
+.add-container .container-inner .content .list .card img {
+  height: 20px;
+}
+
+.view-container {
+  margin: 10px;
+  height: 90vh;
+  width: 50vw;
+  background-color: #cdcdcd;
+  border: 4px groove;
+}
+.view-container .container-inner {
+  padding: 2px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.view-container .container-inner .header {
+  background-color: #005b70;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  flex: 1;
+}
+.view-container .container-inner .header h6 {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.view-container .container-inner .header div button {
+  height: 100%;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.view-container .container-inner .header div button img {
+  height: 25px;
+}
+.view-container .container-inner .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 15;
+}
+.view-container .container-inner .content .default-view {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.view-container .container-inner .content .default-view h4 {
+  text-align: center;
+}
+.view-container .container-inner .content form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.view-container .container-inner .content form .form-group:nth-of-type(1) {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.view-container .container-inner .content form .form-group:nth-of-type(2) {
+  flex: 9;
+}
+.view-container .container-inner .content form .form-group:nth-of-type(2) div {
+  height: 100%;
+  color: black;
+}
+.view-container .container-inner .content form .form-group:nth-of-type(3) {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.view-container .container-inner .content .list {
+  height: 100%;
+  padding: 5px;
+}
+.view-container .container-inner .content .list .card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  gap: 20px;
+}
+.view-container .container-inner .content .list .card img {
   height: 20px;
 }
 
@@ -232,10 +501,6 @@ body {
   flex-direction: column;
 }
 
-.list {
-  width: 30vw;
-}
-
 .icon-container {
   display: flex;
   flex-direction: column;
@@ -262,4 +527,13 @@ body {
 
 .show {
   display: block;
+}
+
+@media screen and (max-height: 600px) {
+  .container-login {
+    height: 60vh;
+  }
+  .container-complete {
+    height: 30vh;
+  }
 }/*# sourceMappingURL=main.css.map */
