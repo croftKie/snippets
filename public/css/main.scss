@@ -264,7 +264,7 @@ body {
 }
 .add-container {
   margin: 10px;
-  height: 90vh;
+  height: 60vh;
   width: 50vw;
   background-color: #cdcdcd;
   border: 4px groove;
@@ -326,10 +326,6 @@ body {
         }
         .form-group:nth-of-type(2) {
           flex: 9;
-          div {
-            height: 100%;
-            color: black;
-          }
         }
         .form-group:nth-of-type(3) {
           flex: 1;
@@ -419,10 +415,6 @@ body {
         }
         .form-group:nth-of-type(2) {
           flex: 9;
-          div {
-            height: 100%;
-            color: black;
-          }
         }
         .form-group:nth-of-type(3) {
           flex: 1;

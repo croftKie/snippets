@@ -1,7 +1,7 @@
 <div class="add-container">
   <div class="container-inner">
     <div class="header">
-      <h1 class="h3">Add Snippet</h1>
+      <h6 class="h3">Add Snippet</h6>
       <a href="/dashboard"><button>Go Back</button></a>
     </div>
     <div class="content">
@@ -18,11 +18,10 @@
         </div>
         <div class="form-group mb-4">
           <textarea
-            class="form-control pt-5 fs-4"
             name="body"
             id="body"
             placeholder="body"
-            rows="12"
+            rows="5"
           ></textarea>
         </div>
 
@@ -35,12 +34,15 @@
     </div>
   </div>
 </div>
-<link rel="stylesheet" href="/js/codemirror/lib/codemirror.css" />
+
 <script src="/js/codemirror/lib/codemirror.js"></script>
+<link rel="stylesheet" href="/js/codemirror/lib/codemirror.css" />
 <script src="/js/codemirror/mode/javascript/javascript.js"></script>
+
 <script>
   var editor = CodeMirror.fromTextArea(document.getElementById("body"), {
     lineNumbers: true,
+    lineWrapping: true,
     mode: "javascript",
   });
 

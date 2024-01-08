@@ -21,6 +21,7 @@ exports.signup = async (req, res) => {
     layout: "../views/layouts/main",
   });
 };
+
 exports.complete = async (req, res) => {
   res.render("auth/complete", {
     layout: "../views/layouts/main",
@@ -38,10 +39,10 @@ exports.signupForm = async (req, res) => {
   const hash = bcrypt.hashSync(req.body.password, salt);
 
   const userData = {
-    name: req.body.name,
     email: req.body.email,
     password: hash,
   };
+
   try {
     await User.create(userData);
     res.render("auth/complete");
